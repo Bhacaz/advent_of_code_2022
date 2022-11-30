@@ -21,7 +21,7 @@ class InputFetcher
     end
 
     def download_input(day, file_path)
-      uri = URI("https://adventofcode.com/2021/day/#{day}/input")
+      uri = URI("https://adventofcode.com/#{Time.now.year}/day/#{day}/input")
       http = Net::HTTP.new(uri.host, 443)
       http.use_ssl = true
       request = Net::HTTP::Get.new(uri.request_uri)
