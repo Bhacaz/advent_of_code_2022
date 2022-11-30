@@ -1,4 +1,5 @@
 require 'benchmark'
+require 'byebug'
 
 day = ARGV[0].rjust(2, '0')
 part = ARGV[1]

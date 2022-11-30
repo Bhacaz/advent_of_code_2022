@@ -1,5 +1,4 @@
 class Part < BasePart
-  DAY = 1
   def run
     increase = 0
     input.each_with_index do |deep, index|
@@ -10,7 +9,7 @@ class Part < BasePart
     increase # => 1298
   end
 
-  def input
-    @input ||= super.map(&:to_i)
+  def input_parser(input)
+    input.map(&:to_i)
   end
 end

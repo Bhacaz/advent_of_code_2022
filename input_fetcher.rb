@@ -4,7 +4,8 @@ require 'cgi'
 
 class InputFetcher
   class << self
-    def day(day)
+    def fetch
+      day = ARGV[0]
       file_path = "day#{day.to_s.rjust(2, '0')}/input.txt"
       if File.exist?(file_path)
         File.read(file_path)
@@ -20,7 +21,7 @@ class InputFetcher
     end
 
     def download_input(day, file_path)
-      uri = URI("https://adventofcode.com/#{Time.now.year}/day/#{day}/input")
+      uri = URI("https://adventofcode.com/2021/day/#{day}/input")
       http = Net::HTTP.new(uri.host, 443)
       http.use_ssl = true
       request = Net::HTTP::Get.new(uri.request_uri)
