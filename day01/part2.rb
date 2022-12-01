@@ -1,6 +1,6 @@
 class Part < BasePart
   def run
-    input.max_by { |bag| bag.inject(:+) }.sum
+    input.sort_by { |bag| bag.inject(:+) }.reverse[..2].flatten.sum
   end
 
   def input_parser(input)
@@ -19,8 +19,8 @@ class Part < BasePart
   end
 end
 
-# -------- Day: 01, Part: 1 --------
-# | Duration	| 2.3 ms	|
-# | Allocated	| 4784		|
-# | Result	| 68802	|
+# -------- Day: 01, Part: 2 --------
+# | Duration	| 2.44 ms	|
+# | Allocated	| 4789		|
+# | Result	| 205370	|
 # ---------------------------------
